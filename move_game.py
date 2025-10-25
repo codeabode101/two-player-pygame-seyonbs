@@ -22,10 +22,11 @@ while running:
       if keys[pygame.K_RIGHT]:
             character_rect.x += speed
       
+      RED =  (255,0,0)
       screen.fill((165,234,7))
-      pygame.draw.rect(screen, (180,180,180),character_rect,2)
+      pygame.draw.rect(screen, (180, 180, 180), character_rect, 0)
       speed = 1
-      character_rect_2 = pygame.Rect((250, 150, 50, 50))
+      character_rect_2 = pygame.Rect((250, 150, 50, 50))    
       character_rect_2.x = 270
       character_rect_2.y = 270
       running = True
@@ -38,12 +39,16 @@ while running:
             character_rect_2.y += speed
       if keys[pygame.K_a]:
             character_rect_2.x -= speed
-      if keys[pygame.K_a]:
+      if keys[pygame.K_d]:
             character_rect_2.x += speed
       if character_rect.x < 0:
             character_rect.x = 0
-      if character_rect.x > 0:
-            character_rect = 0          
+      if character_rect.x > screen.get_width() - character_rect.width:
+            character_rect.x = screen.get_width() - character_rect.width
+      if character_rect.y > 0:
+            character_rect.y = 0
+      if character_rect.y < 0:
+            character_rect.y = 0            
       pygame.draw.rect(screen, (180,180,180),character_rect_2)      
       pygame.display.flip()                             
 pygame.quit()                   
