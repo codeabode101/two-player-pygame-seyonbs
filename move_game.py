@@ -86,7 +86,7 @@ while running:
 
 
             
-      if character_rect.x == safe_zone_rect  and  character_rect.y == safe_zone_rect:
+      if character_rect_2.x == safe_zone_rect  and  character_rect_2.y == safe_zone_rect:
             pygame.draw.rect(screen,(255,54,45),safe_zone_rect)  
 
 
