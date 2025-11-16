@@ -82,8 +82,20 @@ while running:
       if character_rect_2.y > screen.get_height() - character_rect_2.height:
             character_rect_2.y = screen.get_height() -  character_rect_2.height
 
+
+#safe_zone check|part 1
+
+      
+
       if character_rect.x >= 150 and character_rect.x <= 267 :
             pygame.draw.rect(screen,(255,0,0),safe_zone_rect)
+
+
+      
+
+
+
+#safe_zone check|part 2
 
 
 
