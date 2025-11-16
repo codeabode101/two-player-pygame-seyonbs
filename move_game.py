@@ -5,15 +5,18 @@ RED =  (255,0,0)
 speed = 1
 speed_2 = 1
 character_rect = pygame.Rect((270, 270, 50, 50))
+character_rect.x = 67
+character_rect.y = 67
 character_rect_2 = pygame.Rect((150, 150, 50, 50))    
 character_rect_2.x = 67
 character_rect_2.y = 67
-safe_zone_rect = pygame.Rect(150, 164, 167, 67)
+safe_zone_rect = pygame.Rect(150, 164, 167, 167)
 running = True
 
 
 
 #main game loop setup
+
 
 
 
@@ -79,19 +82,42 @@ while running:
       if character_rect_2.y > screen.get_height() - character_rect_2.height:
             character_rect_2.y = screen.get_height() -  character_rect_2.height
 
-
-      if character_rect.x == safe_zone_rect  and  character_rect.y == safe_zone_rect:
+      if character_rect.x >= 150 and character_rect.x <= 267 :
             pygame.draw.rect(screen,(255,0,0),safe_zone_rect)
 
 
 
-            
-      if character_rect_2.x == safe_zone_rect  and  character_rect_2.y == safe_zone_rect:
-            pygame.draw.rect(screen,(255,54,45),safe_zone_rect)  
 
 
 
-      screen.fill((165,234,7))
+#FUN!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+      if keys[pygame.K_SPACE]:
+            speed += 1
+
+
+      if keys[pygame.K_KP_ENTER]:
+            speed_2 += 1
+
+
+
+
+
+      if keys[pygame.K_r]:
+            character_rect.x = 67 
+            character_rect.y = 67 
+
+
+
+
+      if keys[pygame.K_0]:
+            character_rect_2.x = 67
+            character_rect_2.y = 67 
+
+
+
+      screen.fill((75,0,130))
       pygame.draw.rect(screen, (0,0,255),safe_zone_rect)        
       pygame.draw.rect(screen, (180,180,180),character_rect_2)
       pygame.draw.rect(screen, (180, 180, 180), character_rect)    
